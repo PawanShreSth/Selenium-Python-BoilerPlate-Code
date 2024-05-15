@@ -4,7 +4,7 @@ class IframeHandler:
 
     
     def switch_to_iframe(self, iframe_locator: str):
-        iframe = self.driver.find_element(iframe_locator)
+        iframe = self.driver.find_element(*iframe_locator)
         self.driver.switch_to.frame(iframe)
 
     

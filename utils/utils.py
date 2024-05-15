@@ -2,6 +2,10 @@ import json
 import os
 from dotenv import load_dotenv
 
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
 
 def read_json(file_path: str) -> dict:
     """
@@ -32,3 +36,19 @@ def load_environment_variables():
 
     environment_file_path = os.path.join(os.path.dirname(__file__), '..', '.env')
     load_dotenv(environment_file_path)
+
+
+def wait_for_presence_of_element(driver, locator_strategy: str, locator_value: str, timeout=10):
+    
+    try:
+        # Set up an explicit wait with the specified timeout
+        wait = WebDriverWait(driver, timeout)
+
+        # Wait until the element is located
+        element = wait.until(EC.presence_of_element_located((locator_strategy, locator_value)))
+
+        return element
+    
+    except Exception as e:
+        print(f"Error occurred while waiting for element: {e}")
+        return None
