@@ -8,9 +8,11 @@ class AlertHandler:
         """
             Intially the focus is on the main window, to change it use this prior to using other methods defined in AlertHandler.
         """
-        self.driver.switch_to.alert()
+        self.driver.switch_to.alert
 
-    
+    """
+        Use the methos below to interact with the Alert only after switching or focusing in it by calling focus_on_alert()
+    """
     def accept_alert(self):
         Alert(self.driver).accept()
 
