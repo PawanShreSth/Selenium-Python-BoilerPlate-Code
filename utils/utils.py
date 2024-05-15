@@ -1,5 +1,7 @@
 import json
 import os
+from dotenv import load_dotenv
+
 
 def read_json(file_path: str) -> dict:
     """
@@ -19,3 +21,14 @@ def get_image_path(image_name: str) -> str:
 
     image_path = os.path.join(os.path.dirname(__file__), '..', 'data', 'images', image_name)
     return image_path
+
+
+def load_environment_variables():
+    """
+        Load environment variables from .env file
+
+        For access the saved variables, import os package, call this method and user os.getenv("VARIABLE_NAME")
+    """
+
+    environment_file_path = os.path.join(os.path.dirname(__file__), '..', '.env')
+    load_dotenv(environment_file_path)
