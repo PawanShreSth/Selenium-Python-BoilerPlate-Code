@@ -13,14 +13,14 @@ class ElementHandler:
             Otherwise, no wait will be applied.
         """
 
-        # Assuming that the tuple or list looks like: (By.ID, 'button_id')
+        # Assuming that the tuple (locator) looks like: (By.ID, 'button_id')
         if (use_wait == True):
-            button_element = self.get_element_explicitly(locator, wait_time)
-            return button_element
+            element = self.get_element_explicitly(locator, wait_time)
+            return element
         
-        button_element = self.driver.find_element(*locator)
+        element = self.driver.find_element(*locator)
 
-        return button_element
+        return element
 
     
     def get_element_explicitly(self, locator: tuple, wait_time: int):

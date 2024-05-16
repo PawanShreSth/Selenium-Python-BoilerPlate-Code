@@ -27,11 +27,11 @@ def get_path(file_name: str, path_for: str) -> str:
         image_path = os.path.join(os.path.dirname(__file__), '..', 'data', 'images', file_name)
         return image_path
     
-    if (path_for == "valid_json"):
+    if (path_for == "valid_data"):
         valid_data_path = os.path.join(os.path.dirname(__file__), '..', 'data', 'valid data', file_name)
         return valid_data_path
 
-    if (path_for == "invalid_json"):
+    if (path_for == "invalid_data"):
         invalid_data_path = os.path.join(os.path.dirname(__file__), '..', 'data', 'invalid data', file_name)
         return invalid_data_path
 
