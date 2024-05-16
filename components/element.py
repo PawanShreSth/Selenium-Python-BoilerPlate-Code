@@ -1,4 +1,4 @@
-from utils.utils import wait_for_presence_of_element, get_explicit_wait_time
+from utils.utils import wait_for_presence_of_element
 
 
 
@@ -7,7 +7,7 @@ class ElementHandler:
         self.driver = driver
         
     
-    def get_element(self, locator: tuple, use_wait: bool, wait_time=10):
+    def get_element(self, locator: tuple, use_wait: bool = False, wait_time=10):
         """
             if use_wait is true is specified, the element will be retrieved by applying explicit wait.
             Otherwise, no wait will be applied.
