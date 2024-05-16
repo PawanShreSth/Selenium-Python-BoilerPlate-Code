@@ -62,6 +62,7 @@ This folder houses utility methods for various functionalities across the projec
 ### 5. .env file
 
 This file defines environment variables for use across the project, loaded using the `load_environment_variable` method.
+
 `.env.example`: This file is just for showing where to store the .env file and how to use it.
 
 ### 6. .gitignore file
