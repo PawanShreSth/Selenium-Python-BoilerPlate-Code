@@ -18,13 +18,23 @@ def read_json(file_path: str) -> dict:
         return json.load(file)
 
 
-def get_image_path(image_name: str) -> str:
+def get_path(file_name: str, path_for: str) -> str:
     """
         Returns the file or image path which is saved within the images directory inside data folder.
-    """
+    """ 
 
-    image_path = os.path.join(os.path.dirname(__file__), '..', 'data', 'images', image_name)
-    return image_path
+    if (path_for == "image_data"):
+        image_path = os.path.join(os.path.dirname(__file__), '..', 'data', 'images', file_name)
+        return image_path
+    
+    if (path_for == "valid_json"):
+        valid_data_path = os.path.join(os.path.dirname(__file__), '..', 'data', 'valid data', file_name)
+        return valid_data_path
+
+    if (path_for == "invalid_json"):
+        invalid_data_path = os.path.join(os.path.dirname(__file__), '..', 'data', 'invalid data', file_name)
+        return invalid_data_path
+
 
 
 def load_environment_variables():
@@ -38,7 +48,7 @@ def load_environment_variables():
     load_dotenv(environment_file_path)
 
 
-def wait_for_presence_of_element(driver, locator_strategy: str, locator_value: str, timeout=10):
+def wait_for_presence_of_element(driver, locator_strategy: str, locator_value: str, timeout=5):
     
     try:
         # Set up an explicit wait with the specified timeout
