@@ -11,10 +11,10 @@ The folder structure is designed to organize components, data, pages, tests, and
 
   - **ElementHandler Class**:
     - `get_element`: This method retrieves a web element.
-  - If the `use_wait` argument is `True`, it applies an explicit wait before returning the element and by default wait time is 10 but can be changed by using key word argument: `wait_for`=3.
-  - Both `use_wait` and `wait_for` are optional.
-  - If `use_wait` is `False`, it returns the element without any wait.
-  - `wait_for` is not used if the `use_wait` is False, which by default it is.
+    - If the `use_wait` argument is `True`, it applies an explicit wait before returning the element and by default wait time is 10 but can be changed by using key word   argument: `wait_for`=3.
+    - Both `use_wait` and `wait_for` are optional.
+    - If `use_wait` is `False`, it returns the element without any wait.
+    - `wait_for` is not used if the `use_wait` is False, which by default it is.
 
 ### 2. data folder
 
