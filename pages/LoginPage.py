@@ -17,7 +17,8 @@ class Login:
         self.locators = LoginPageLocatorSupplier()
 
     def visit_page(self):
-        self.driver.get("https://practicetestautomation.com/practice-test-login/")
+        self.driver.maximize_window()
+        self.driver.get("https://practicetestautomation.com/practice-test-login/") 
 
     
     def enter_username(self):
