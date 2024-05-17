@@ -3,7 +3,7 @@ import sys
 
 # Add the directory to sys.path.
 # The path may vary based on which OS is used or where the file is located.
-# Done to precent ModuleNotFoundError
+# Done to remove ModuleNotFoundError by adding the folder path to the system path
 sys.path.append("C:\Selenium Boiler Plate")
 
 from selenium import webdriver
