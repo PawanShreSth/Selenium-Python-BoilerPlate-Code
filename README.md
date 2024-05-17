@@ -22,15 +22,17 @@ To work with the Selenium boilerplate, it is recommended to use one of the follo
 
 1. Create a .env File: In the root directory of your project, create a .env file and specify the following environment variables:
    Example of where to store `.env` is shown by using the file `.env.example`
+
+   Set the follwing variable to use the boiler plate script.
    `USERNAME=your_username`
    `PASSWORD=your_password`
    `BASE_URL=your_base_url`
 
-2. Change Directory: Navigate to the Selenium Boiler Plate directory. You can do this using the terminal or command prompt:
+3. Change Directory: Navigate to the Selenium Boiler Plate directory. You can do this using the terminal or command prompt:
 
    `cd path/to/Selenium\ Boiler\ Plate`
 
-3. Run the Test Script: Use the Command Line Interface (CLI) to run the test script. Replace login_test.py with the name of your script if different:
+4. Run the Test Script: Use the Command Line Interface (CLI) to run the test script. Replace login_test.py with the name of your script if different:
 
    `python .\test\login_test.py`
 
