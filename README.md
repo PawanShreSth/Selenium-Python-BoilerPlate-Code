@@ -21,6 +21,7 @@ To work with the Selenium boilerplate, it is recommended to use one of the follo
 # Configuration for using the test script
 
 1. Create a .env File: In the root directory of your project, create a .env file and specify the following environment variables:
+   Example of where to store `.env` is shown by using the file `.env.example`
    `USERNAME=your_username`
    `PASSWORD=your_password`
    `BASE_URL=your_base_url`
@@ -32,10 +33,6 @@ To work with the Selenium boilerplate, it is recommended to use one of the follo
 3. Run the Test Script: Use the Command Line Interface (CLI) to run the test script. Replace login_test.py with the name of your script if different:
 
    `python .\test\login_test.py`
-
-# Notes
-
-- Ensure that your directory structure is correctly set up and that the .env file is placed in the correct location for the scripts to access the environment variables.
 
 # **\*\***\*\***\*\***\*\*\*\***\*\***\*\***\*\***\*\*\*\***\*\***\*\***\*\***\*\*\*\***\*\***\*\***\*\***\_**\*\***\*\***\*\***\*\*\*\***\*\***\*\***\*\***\*\*\*\***\*\***\*\***\*\***\*\*\*\***\*\***\*\***\*\***
 
