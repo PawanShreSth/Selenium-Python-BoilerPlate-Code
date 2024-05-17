@@ -27,9 +27,11 @@ driver = webdriver.Chrome(service=service, options=chrome_options)
 def login():
     # Example of accessing password from environment variable file
     password = os.getenv("PASSWORD")
+    base_url = os.getenv("BASE_URL")
+    
     login = Login(driver)
 
-    login.visit_page()
+    login.visit_page(base_url)
     login.enter_username()
     login.enter_password(password)
     login.click_submit()
