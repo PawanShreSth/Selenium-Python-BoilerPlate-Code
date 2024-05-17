@@ -1,5 +1,44 @@
 # Selenium Python Project
 
+# Getting Started
+
+- Python 3.11.4: Ensure you have Python 3.11.4 installed on your machine.
+- PIP Package Manager: Ensure PIP is installed for managing Python packages.
+
+# Recommended Code Editors
+
+To work with the Selenium boilerplate, it is recommended to use one of the following editors:
+
+- Visual Studio Code (Recommended)
+- PyCharm
+
+# Installations
+
+- pip install python-dotenv (https://pypi.org/project/python-dotenv/)
+- pip install -U selenium (https://pypi.org/project/selenium/)
+- pip install webdriver-manager (https://pypi.org/project/webdriver-manager/)
+
+# Configuration for using the test script
+
+1. Create a .env File: In the root directory of your project, create a .env file and specify the following environment variables:
+   `USERNAME=your_username`
+   `PASSWORD=your_password`
+   `BASE_URL=your_base_url`
+
+2. Change Directory: Navigate to the Selenium Boiler Plate directory. You can do this using the terminal or command prompt:
+
+   `cd path/to/Selenium\ Boiler\ Plate`
+
+3. Run the Test Script: Use the Command Line Interface (CLI) to run the test script. Replace login_test.py with the name of your script if different:
+
+   `python .\test\login_test.py`
+
+# Notes
+
+- Ensure that your directory structure is correctly set up and that the .env file is placed in the correct location for the scripts to access the environment variables.
+
+# **\*\***\*\***\*\***\*\*\*\***\*\***\*\***\*\***\*\*\*\***\*\***\*\***\*\***\*\*\*\***\*\***\*\***\*\***\_**\*\***\*\***\*\***\*\*\*\***\*\***\*\***\*\***\*\*\*\***\*\***\*\***\*\***\*\*\*\***\*\***\*\***\*\***
+
 ## Folder Structure Overview
 
 This Selenium Python project adopts a structured approach to facilitate clean, maintainable, and scalable code.
@@ -11,7 +50,7 @@ The folder structure is designed to organize components, data, pages, tests, and
 
   - **ElementHandler Class**:
     - `get_element`: This method retrieves a web element.
-    - If the `use_wait` argument is `True`, it applies an explicit wait before returning the element and by default wait time is 10 but can be changed by using key word   argument: `wait_for`=3.
+    - If the `use_wait` argument is `True`, it applies an explicit wait before returning the element and by default wait time is 10 but can be changed by using key word argument: `wait_for`=3.
     - Both `use_wait` and `wait_for` are optional.
     - If `use_wait` is `False`, it returns the element without any wait.
     - `wait_for` is not used if the `use_wait` is False, which by default it is.
