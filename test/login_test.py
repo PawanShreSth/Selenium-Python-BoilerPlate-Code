@@ -10,19 +10,15 @@ from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
 
+from utils.driver_factory import DriverFactory
 from pages.LoginPage import Login
 from utils.utils import load_environment_variables
 
 load_environment_variables()
 
-# Setting up Chrome options (optional)
-chrome_options = webdriver.ChromeOptions()
-# chrome_options.add_argument("--headless")  # Uncomment this line to run in headless mode
 
 
-# Using WebDriver Manager to automatically handle the driver
-service = Service(ChromeDriverManager().install())
-driver = webdriver.Chrome(service=service, options=chrome_options)
+driver = DriverFactory.get_driver(os.getenv("BROWSER"))
 
 def login():
     # Example of accessing password from environment variable file
