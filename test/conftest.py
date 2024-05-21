@@ -19,3 +19,8 @@ def driver():
     yield driver
     print("Close application")
     driver.quit()
+
+
+# Example usage (name of the fixture and the method's parameter should be same)
+# def test_login(driver):
+#    ...
