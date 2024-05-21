@@ -38,7 +38,7 @@ To work with the Selenium boilerplate, it is recommended to use one of the follo
 
    `python .\test\login_test.py` : To run without using pytest
    
-   `pytest -v --html=report.html --self-contained-html`: To run all files by using pytest that starts with "test" or ends with test/
+   `pytest -v --html=report.html --self-contained-html`: To run all files by using pytest that starts with "test" or ends with "test"
    
    `pytest -v --html=report.html --self-contained-html --screenshot=on --screenshot_path=on`: For capturing screenshot upon test failure
 
@@ -119,3 +119,5 @@ This file defines environment variables for use across the project, loaded using
 ### 6. .gitignore file
 
 Specifies files and folders for Git to ignore, ensuring that sensitive or unnecessary files are not tracked in the version control system.
+
+### 7. screenshots: Folder where the screenshot of the page is stored when a failure occurs. Generated automatically.
