@@ -20,6 +20,6 @@ def driver():
     driver.quit()
 
 
-# Example usage (name of the fixture and the method's parameter should be same)
+# Example usage (name of the fixture method and the method's parameter should be same)
 # def test_login(driver):
 #    ...
