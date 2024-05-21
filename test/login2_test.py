@@ -14,5 +14,3 @@ def test_login(driver):
     login.enter_username_2()
     login.enter_password_2()
     login.click_submit_2()
-
-# test_login()
