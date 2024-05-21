@@ -37,9 +37,11 @@ To work with the Selenium boilerplate, it is recommended to use one of the follo
 3. Run the Test Script: Use the Command Line Interface (CLI) to run the test script. Replace login_test.py with the name of your script if different:
 
    `python .\test\login_test.py` : To run without using pytest
-   
+
+   For generating HTML Report.
    `pytest -v --html=report.html --self-contained-html`: To run all files by using pytest that starts with "test" or ends with "test"
    
+   For generating HTML Report and Screenshots upon failure.
    `pytest -v --html=report.html --self-contained-html --screenshot=on --screenshot_path=on`: For capturing screenshot upon test failure
 
 # **\*\***\*\***\*\***\*\*\*\***\*\***\*\***\*\***\*\*\*\***\*\***\*\***\*\***\*\*\*\***\*\***\*\***\*\***\_**\*\***\*\***\*\***\*\*\*\***\*\***\*\***\*\***\*\*\*\***\*\***\*\***\*\***\*\*\*\***\*\***\*\***\*\***
