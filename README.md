@@ -28,13 +28,14 @@ To work with the Selenium boilerplate, it is recommended to use one of the follo
    `PASSWORD=your_password`
    `BASE_URL=your_base_url`
 
-3. Change Directory: Navigate to the Selenium Boiler Plate directory. You can do this using the terminal or command prompt:
+2. Change Directory: Navigate to the Selenium Boiler Plate directory. You can do this using the terminal or command prompt:
 
    `cd path/to/Selenium\ Boiler\ Plate`
 
-4. Run the Test Script: Use the Command Line Interface (CLI) to run the test script. Replace login_test.py with the name of your script if different:
+3. Run the Test Script: Use the Command Line Interface (CLI) to run the test script. Replace login_test.py with the name of your script if different:
 
-   `python .\test\login_test.py`
+   `python .\test\login_test.py` : To run without using pytest
+   `pytest -v --html=report.html --self-contained-html`: To run files by using pytest
 
 # **\*\***\*\***\*\***\*\*\*\***\*\***\*\***\*\***\*\*\*\***\*\***\*\***\*\***\*\*\*\***\*\***\*\***\*\***\_**\*\***\*\***\*\***\*\*\*\***\*\***\*\***\*\***\*\*\*\***\*\***\*\***\*\***\*\*\*\***\*\***\*\***\*\***
 
@@ -82,7 +83,12 @@ Following the Page Object Model (POM) design pattern, these folders organize loc
 
 - **tests**: Stores test scripts that utilize class and methods defined in the `pages` folder.
 
-  - **login_test.py**: Demonstrates usage of `load_environment_variables`. Additionally, includes an import workaround: `sys.path.append("C:\Selenium Boiler Plate")` to address `ModuleNotFoundError`.
+  - **login_without_pytest.py**: Demonstrates usage of `load_environment_variables`. Additionally, includes an import workaround: `sys.path.append("C:\Selenium Boiler Plate")` to address `ModuleNotFoundError`.
+
+  - **conftest.py**: Used to define and configure fixtures, which are reusable pieces of setup and teardown code that can be shared across multiple test files.
+  - Fixtures defined in conftest.py are automatically available to all test files in the same directory and its subdirectories without the need for explicit imports. Examples of using it are demonstrated in the `login_test.py` and `login2_test.py` file within the test folder.
+
+  Note: For pytest to run the test script, ensure that files name starts with test or ends with test.
 
 ### 4. utils folder
 
@@ -96,6 +102,8 @@ This folder houses utility methods for various functionalities across the projec
   - `wait_for_presence_of_element(driver, by, value)`: Defines explicit wait logic used by the `get_element` method in the `ElementHandler` class.
 
   - **LocatorStrategy.py**: Contains a `LocatorStrategySupplier` class with a `locate_element_by` method. This method returns `By` values based on the `locate_by` argument, providing flexibility in element location strategies.
+
+  - **driver_factory.py**: Simply returns the driver instance based on the arguments (chrome or firefox) supplied.
 
 ### 5. .env file
 
