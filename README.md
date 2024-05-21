@@ -39,9 +39,11 @@ To work with the Selenium boilerplate, it is recommended to use one of the follo
    `python .\test\login_test.py` : To run without using pytest
 
    For generating HTML Report.
+   
    `pytest -v --html=report.html --self-contained-html`: To run all files by using pytest that starts with "test" or ends with "test"
    
    For generating HTML Report and Screenshots upon failure.
+   
    `pytest -v --html=report.html --self-contained-html --screenshot=on --screenshot_path=on`: For capturing screenshot upon test failure
 
 # **\*\***\*\***\*\***\*\*\*\***\*\***\*\***\*\***\*\*\*\***\*\***\*\***\*\***\*\*\*\***\*\***\*\***\*\***\_**\*\***\*\***\*\***\*\*\*\***\*\***\*\***\*\***\*\*\*\***\*\***\*\***\*\***\*\*\*\***\*\***\*\***\*\***
