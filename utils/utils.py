@@ -1,3 +1,4 @@
+import csv
 import json
 import os
 from dotenv import load_dotenv
@@ -62,3 +63,22 @@ def wait_for_presence_of_element(driver, locator_strategy: str, locator_value: s
     except Exception as e:
         print(f"Error occurred while waiting for element: {e}")
         return None
+
+
+def read_data_from_csv(file_path):
+    datalist = []
+
+    #Open CSV File
+    csvdata = open(file_path, "r")
+
+    #Create CSV Reader
+    reader = csv.reader(csvdata)
+
+    #skip header
+    next(reader)
+
+    #Add CSV Rows to list
+    for rows in reader:
+        datalist.append(rows)
+    
+    return datalist
