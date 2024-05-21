@@ -72,7 +72,6 @@ class Login:
 
         button = self.element.get_element(locator_strategy_value)
         button.click()
-        time.sleep(5)
 
     
     def click_submit(self):
@@ -82,5 +81,4 @@ class Login:
         # Using explicit wait
         button = self.element.get_element(locator_strategy_value, use_wait=True, wait_time=5)
         button.click()
-        time.sleep(10)
 
