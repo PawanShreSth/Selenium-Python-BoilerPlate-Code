@@ -23,6 +23,7 @@ class Login:
         self.driver.get(base_url) 
 
     
+    # Fo login_test.py
     def enter_username(self):
         locator_strategy = self.locator_strategy.locate_element_by("CSS") # returns By.CSS_SELECTOR
         locator_strategy_value = (locator_strategy, self.locators.email_field_locator_value)
@@ -42,6 +43,15 @@ class Login:
 
         password_field = self.element.get_element(locator_strategy_value)
         password_field.send_keys(password)
+
+
+    def click_submit(self):
+        locator_strategy = self.locator_strategy.locate_element_by("XPATH") # returns By.CSS_SELECTOR
+        locator_strategy_value = (locator_strategy, self.locators.button_locator_value)
+
+        # Using explicit wait
+        button = self.element.get_element(locator_strategy_value, use_wait=True, wait_time=5)
+        button.click()
 
     
     # Fo login2_test.py
@@ -71,14 +81,5 @@ class Login:
         locator_strategy_value = (locator_strategy, "button[type='submit']")
 
         button = self.element.get_element(locator_strategy_value)
-        button.click()
-
-    
-    def click_submit(self):
-        locator_strategy = self.locator_strategy.locate_element_by("XPATH") # returns By.CSS_SELECTOR
-        locator_strategy_value = (locator_strategy, self.locators.button_locator_value)
-
-        # Using explicit wait
-        button = self.element.get_element(locator_strategy_value, use_wait=True, wait_time=5)
         button.click()
 

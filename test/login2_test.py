@@ -1,7 +1,4 @@
 import os
-import sys
-import pytest
-
 
 from pages.LoginPage import Login
 from utils.utils import load_environment_variables
