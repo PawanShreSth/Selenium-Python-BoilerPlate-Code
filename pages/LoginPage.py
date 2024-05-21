@@ -56,6 +56,19 @@ class Login:
         button.click()
 
     
+    def checkLoggedInMessage(self):
+        # h1[class="post-title"]
+        locator_strategy = self.locator_strategy.locate_element_by("CSS") # returns By.CSS_SELECTOR
+        locator_strategy_value = (locator_strategy, "h1[class='post-title']")
+
+        heading_element = self.element.get_element(locator_strategy_value, wait_time=True)
+
+        is_visible = heading_element.is_displayed()
+
+        assert is_visible
+        assert "Logged In" == heading_element.text
+
+    
     # Fo login2_test.py
     def enter_username_2(self):
         locator_strategy = self.locator_strategy.locate_element_by("CSS") # returns By.CSS_SELECTOR
@@ -81,3 +94,5 @@ class Login:
         button = self.element.get_element(locator_strategy_value)
         button.click()
 
+
+    

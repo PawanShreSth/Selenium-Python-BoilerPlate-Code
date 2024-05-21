@@ -16,4 +16,5 @@ def test_login(driver):
     login.enter_username()
     login.enter_password(password)
     login.click_submit()
+    login.checkLoggedInMessage()
 
