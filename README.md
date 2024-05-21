@@ -17,6 +17,8 @@ To work with the Selenium boilerplate, it is recommended to use one of the follo
 - pip install python-dotenv (https://pypi.org/project/python-dotenv/)
 - pip install -U selenium (https://pypi.org/project/selenium/)
 - pip install webdriver-manager (https://pypi.org/project/webdriver-manager/)
+- pip install pytest (https://pypi.org/project/pytest/)
+- pip install pytest-failed-screenshot (https://pypi.org/project/pytest-failed-screenshot/)
 
 # Configuration for using the test script
 
@@ -35,7 +37,8 @@ To work with the Selenium boilerplate, it is recommended to use one of the follo
 3. Run the Test Script: Use the Command Line Interface (CLI) to run the test script. Replace login_test.py with the name of your script if different:
 
    `python .\test\login_test.py` : To run without using pytest
-   `pytest -v --html=report.html --self-contained-html`: To run files by using pytest
+   `pytest -v --html=report.html --self-contained-html`: To run all files by using pytest that starts with "test" or ends with test/
+   `pytest -v --html=report.html --self-contained-html --screenshot=on --screenshot_path=on`: For capturing screenshot upon test failure
 
 # **\*\***\*\***\*\***\*\*\*\***\*\***\*\***\*\***\*\*\*\***\*\***\*\***\*\***\*\*\*\***\*\***\*\***\*\***\_**\*\***\*\***\*\***\*\*\*\***\*\***\*\***\*\***\*\*\*\***\*\***\*\***\*\***\*\*\*\***\*\***\*\***\*\***
 
