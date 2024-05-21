@@ -2,6 +2,8 @@
 import pytest
 import sys
 import os
+
+# To remove ModuleNotFoundError
 sys.path.append("C:\\Selenium Boiler Plate")
 
 from utils.utils import load_environment_variables
