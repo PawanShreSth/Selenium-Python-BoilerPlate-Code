@@ -7,8 +7,6 @@ from utils.LocatorStrategy import LocatoryStrategySupplier
 from selenium.webdriver.common.by import By
 
 from .LoginPageLocator import LoginPageLocatorSupplier
-
-@pytest.mark.usefixtures("driver")
 class Login:
     def __init__(self, driver):
         self.driver = driver
