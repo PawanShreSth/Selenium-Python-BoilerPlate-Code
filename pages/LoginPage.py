@@ -20,6 +20,9 @@ class Login:
     def visit_page(self, base_url: str):
         self.driver.maximize_window()
         self.driver.get(base_url) 
+        main_page_title = "Test Login | Practice Test Automation"
+
+        assert main_page_title == self.driver.title
 
     
     # Fo login_test.py
