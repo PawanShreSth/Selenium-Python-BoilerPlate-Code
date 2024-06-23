@@ -39,11 +39,11 @@ To work with the Selenium boilerplate, it is recommended to use one of the follo
    `python .\test\login_test.py` : To run without using pytest
 
    For generating HTML Report.
-   
+
    `pytest -v --html=report.html --self-contained-html`: To run all files by using pytest that starts with "test" or ends with "test"
-   
+
    For generating HTML Report and Screenshots upon failure.
-   
+
    `pytest -v --html=report.html --self-contained-html --screenshot=on --screenshot_path=on`: For capturing screenshot upon test failure
 
 # **\*\***\*\***\*\***\*\*\*\***\*\***\*\***\*\***\*\*\*\***\*\***\*\***\*\***\*\*\*\***\*\***\*\***\*\***\_**\*\***\*\***\*\***\*\*\*\***\*\***\*\***\*\***\*\*\*\***\*\***\*\***\*\***\*\*\*\***\*\***\*\***\*\***
@@ -109,8 +109,6 @@ This folder houses utility methods for various functionalities across the projec
   - `get_path(file_name, path_for)`: Returns the full path of a stored file based on the `file_name` and `path_for` parameters, where `path_for` specifies the data folder subdirectory.
   - `load_environment_variables()`: Loads environment variables from the `.env` file using `os.getenv("VARIABLE_NAME")`.
   - `wait_for_presence_of_element(driver, by, value)`: Defines explicit wait logic used by the `get_element` method in the `ElementHandler` class.
-
-  - **LocatorStrategy.py**: Contains a `LocatorStrategySupplier` class with a `locate_element_by` method. This method returns `By` values based on the `locate_by` argument, providing flexibility in element location strategies.
 
   - **driver_factory.py**: Simply returns the driver instance based on the arguments (chrome or firefox) supplied.
 

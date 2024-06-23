@@ -3,7 +3,6 @@ import time
 import pytest
 
 from components.element import ElementHandler
-from utils.LocatorStrategy import LocatoryStrategySupplier
 from selenium.webdriver.common.by import By
 
 
@@ -11,7 +10,6 @@ class Login:
     def __init__(self, driver):
         self.driver = driver
         self.element = ElementHandler(self.driver)
-        self.locator_strategy = LocatoryStrategySupplier()
 
         # Locators
         self.email_field_locator_value ='input[name="username"]'
