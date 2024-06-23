@@ -8,10 +8,9 @@ sys.path.append("C:\Selenium Boiler Plate")
 
 from pages.LoginPage import Login
 from utils.utils import load_environment_variables
-from utils.driver_factory import DriverFactory
-
 
 load_environment_variables()
+
 
 def test_login(driver):
     # Example of accessing password from environment variable file
@@ -25,6 +24,3 @@ def test_login(driver):
     login.enter_password(password)
     login.click_submit()
     login.checkLoggedInMessage()
-
-driver = DriverFactory().get_driver('chrome')
-test_login(driver)
