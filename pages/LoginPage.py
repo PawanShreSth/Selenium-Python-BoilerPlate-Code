@@ -6,7 +6,6 @@ from components.element import ElementHandler
 from utils.LocatorStrategy import LocatoryStrategySupplier
 from selenium.webdriver.common.by import By
 
-from .LoginPageLocator import LoginPageLocatorSupplier
 
 class Login:
     def __init__(self, driver):
@@ -14,8 +13,13 @@ class Login:
         self.element = ElementHandler(self.driver)
         self.locator_strategy = LocatoryStrategySupplier()
 
-        #Locators Value
-        self.locators = LoginPageLocatorSupplier()
+        # Locators
+        self.email_field_locator_value ='input[name="username"]'
+        self.password_field_locator_value = 'input[name="password"]'
+        self.button_locator_value = "//button[contains(text(), 'Submit')]"
+        self.logged_in_msg_locator_value = "h1[class='post-title']"
+        self.button_locator_value_2 = "button[type='submit']"
+
 
     def visit_page(self, base_url: str):
         self.driver.maximize_window()
@@ -27,8 +31,7 @@ class Login:
     
     # Fo login_test.py
     def enter_username(self):
-        locator_strategy = self.locator_strategy.locate_element_by("CSS") # returns By.CSS_SELECTOR
-        locator_strategy_value = (locator_strategy, self.locators.email_field_locator_value)
+        locator_strategy_value = (By.CSS_SELECTOR, self.email_field_locator_value)
 
         # Passing use_wait and wait_time is optional
         # if use_wait is not passed by default it is False meaning no wait will be applied.
@@ -39,17 +42,14 @@ class Login:
 
 
     def enter_password(self, password: str):
-        locator_strategy = self.locator_strategy.locate_element_by("CSS") # returns By.CSS_SELECTOR
-        locator_strategy_value = (locator_strategy, self.locators.password_field_locator_value)
-
+        locator_strategy_value = (By.CSS_SELECTOR, self.password_field_locator_value)
 
         password_field = self.element.get_element(locator_strategy_value)
         password_field.send_keys(password)
 
 
     def click_submit(self):
-        locator_strategy = self.locator_strategy.locate_element_by("XPATH") # returns By.CSS_SELECTOR
-        locator_strategy_value = (locator_strategy, self.locators.button_locator_value)
+        locator_strategy_value = (By.XPATH, self.button_locator_value)
 
         # Using explicit wait
         button = self.element.get_element(locator_strategy_value, use_wait=True, wait_time=5)
@@ -57,9 +57,7 @@ class Login:
 
     
     def checkLoggedInMessage(self):
-        # h1[class="post-title"]
-        locator_strategy = self.locator_strategy.locate_element_by("CSS") # returns By.CSS_SELECTOR
-        locator_strategy_value = (locator_strategy, "h1[class='post-title']")
+        locator_strategy_value = (By.CSS_SELECTOR, self.logged_in_msg_locator_value)
 
         heading_element = self.element.get_element(locator_strategy_value, wait_time=True)
 
@@ -71,16 +69,14 @@ class Login:
     
     # Fo login2_test.py
     def enter_username_2(self):
-        locator_strategy = self.locator_strategy.locate_element_by("CSS") # returns By.CSS_SELECTOR
-        locator_strategy_value = (locator_strategy, self.locators.email_field_locator_value)
+        locator_strategy_value = (By.CSS_SELECTOR, self.email_field_locator_value)
 
         email_field = self.element.get_element(locator_strategy_value, use_wait=True)
         email_field.send_keys("practice")
 
 
     def enter_password_2(self):
-        locator_strategy = self.locator_strategy.locate_element_by("CSS") # returns By.CSS_SELECTOR
-        locator_strategy_value = (locator_strategy, self.locators.password_field_locator_value)
+        locator_strategy_value = (By.CSS_SELECTOR, self.password_field_locator_value)
 
 
         password_field = self.element.get_element(locator_strategy_value)
@@ -88,8 +84,7 @@ class Login:
 
     
     def click_submit_2(self):
-        locator_strategy = self.locator_strategy.locate_element_by("CSS") # returns By.CSS_SELECTOR
-        locator_strategy_value = (locator_strategy, self.locators.button_locator_value_2)
+        locator_strategy_value = (By.CSS_SELECTOR, self.button_locator_value_2)
 
         button = self.element.get_element(locator_strategy_value)
         button.click()
