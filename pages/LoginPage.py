@@ -62,7 +62,7 @@ class Login:
         is_visible = heading_element.is_displayed()
 
         assert is_visible
-        assert "Logged In" == heading_element.text
+        assert "Logged In Successfully" == heading_element.text
 
     
     # Fo login2_test.py
